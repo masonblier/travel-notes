@@ -1,0 +1,50 @@
+<ion-view view-title="Travel Notes">
+  <ion-header-bar>
+    <h1 class="title">Travel Notes</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="content" ng-hide="!isLoaded">
+      <div id="travelersList">
+        <ion-list>
+          <div ng-repeat="traveler in travelers">
+            <ion-item class="item-stable"
+                      ng-click="toggleGroup(traveler)"
+                      ng-class="{active: isExpanded[traveler.id]}">
+                <i class="icon places-user-list-icon" ng-class="isExpanded[traveler.id] ? 'ion-chevron-down' : 'ion-chevron-right'"></i>
+              {{traveler.displayName}}
+            </ion-item>
+            <ion-item class="item-accordion item-checkbox"
+                      ng-repeat="(idx,place) in traveler.destinations"
+                      ng-show="isExpanded[traveler.id]">
+
+              <div class="places-user-list-item">
+                <div class="places-user-list-remove" ng-click="removeDestination(traveler, idx)" ng-if="isUserTraveler(traveler)">
+                  <i class="icon ion-close-round"></i>
+                </div>
+                <label class="checkbox checkbox-balanced">
+                  <input type="checkbox" ng-model="place.visited" ng-click="toggleVisited(traveler, place)">
+                </label>
+                {{place.name}}
+              </div>
+
+            </ion-item>
+          </div>
+        </ion-list>
+      </div>
+
+      <form id="placesForm" ng-submit="addDestination()">
+        <label class="form-label" for="Autocomplete">New Destination</label>
+        <div class="item item-input places-input">
+          <input type="text" id="Autocomplete" ng-autocomplete ng-model="place.name" details="place.details" options="place.options" ng-focus="placeFocused()" ng-blur="placeBlurred()"/>
+        </div>
+
+        <div class="content-block">
+          <button type="submit" class="button button-block button-balanced">Add Destination</button>
+        </div>
+
+        <div class="places-spacer"></div>
+      </form>
+    </div>
+
+  </ion-content>
+</ion-view>

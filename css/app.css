@@ -1,0 +1,131 @@
+/* app */
+.content {
+  margin: 20px auto;
+  max-width: 600px;
+}
+@media(max-width: 640px) {
+  .content {
+    margin: 20px;
+  }
+}
+.places-block {
+  margin-top: 15px;
+}
+.text-center {
+  text-align: center;
+}
+
+/* gray header bar */
+.bar.bar-header {
+  background: #404040;
+}
+.bar.bar-header .title {
+  color: white;
+}
+.bar-stable .button.button-clear {
+  color: white;
+}
+
+/* form tweaks */
+.form-label {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+/* login view */
+.form-label.login-label {
+  font-size: 1.5em;
+  padding: 10px 0;
+}
+.login-error {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #ef473a;
+  color: white;
+  border: 1px solid #b7342a;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+/* side menu */
+.side-menu {
+  background: #303030;
+  color: white;
+}
+.side-menu .item,
+.side-menu .item > .item-content {
+  background: #404040;
+  color: white;
+}
+.side-menu .item > .item-content:active {
+  background: #707070;
+}
+.item.login-status {
+  background: #303030;
+  border-top: 0;
+}
+
+/* places autocomplete form */
+#placesForm {
+  margin-top: 15px;
+}
+#placesForm > .item.item-input.places-input {
+  padding: 0;
+}
+#placesForm > .item.item-input.places-input > input {
+  padding: 4px 0 3px 16px;
+  height: 40px;
+}
+.places-spacer {
+  padding: 10px;
+}
+
+/* places user list */
+#travelersLoading {
+  text-align: center;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(255,255,255,0.5);
+}
+#travelersList .item-stable {
+  padding: 15px;
+  background: #404040;
+  color: white;
+  font-weight: bold;
+}
+.places-user-list-icon {
+  float: right;
+  margin-right: 5px;
+}
+.places-user-list-item {
+  padding: 0 0 10px 0;
+  margin-top: 10px;
+}
+.places-user-list-item > .checkbox {
+  right: 64px;
+}
+.places-user-list-remove {
+  float: right;
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 5px;
+  z-index: 4;
+}
+
+/* list item expander animations */
+/* from http://codepen.io/ionic/pen/uJkCz */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}

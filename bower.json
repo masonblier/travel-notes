@@ -1,0 +1,11 @@
+{
+  "name": "travel-notes",
+  "description": "Travel Checklist app",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "ionic": "~1.1.0",
+    "ngAutocomplete": "~1.0.0"
+  }
+}
